@@ -1,12 +1,60 @@
 import React from "react";
+import {
+  Card,
+  CardActionArea,
+  CardMedia,
+  CardContent,
+  Typography,
+  CardActions,
+  Button,
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import ShareIcon from "@material-ui/icons/Share";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
-const GifGridItem = ({ id, title, url }) => {
-  console.log({ id, title, url });
+const useStyles = makeStyles({
+  root: {
+    width: "25%",
+    margin: "1.2rem",
+    background: "#fdfdfd",
+    color: "#333",
+  },
+  media: {
+    height: 270,
+  },
+});
+
+const GifGridItem = ({ title, url }) => {
+  const classes = useStyles();
   return (
-    <div>
-      <img src={url} alt={title} />
-      <p>{title}</p>
-    </div>
+    <Card className={classes.root} elevation={8}>
+      <CardActionArea>
+        <CardMedia className={classes.media} image={url} title={title} />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {title}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button
+            size="small"
+            color="primary"
+            variant="contained"
+            endIcon={<ShareIcon />}
+          >
+            Share
+          </Button>
+          <Button
+            size="small"
+            color="primary"
+            variant="contained"
+            endIcon={<FavoriteIcon />}
+          >
+            Like
+          </Button>
+        </CardActions>
+      </CardActionArea>
+    </Card>
   );
 };
 

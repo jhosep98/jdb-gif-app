@@ -18,11 +18,12 @@ const AddCategory = ({ setCategories }) => {
   return (
     <form onSubmit={handleSubmit}>
       <TextField
-        variant="outlined"
+        variant="filled"
         label="Add-Category"
         type="text"
         value={inputValue}
         onChange={handleInputChange}
+        color="primary"
         fullWidth
       ></TextField>
     </form>

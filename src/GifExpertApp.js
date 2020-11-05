@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import AddCategory from "./components/AddCategory";
 import GifGrid from "./components/GifGrid";
+import { ThemeProvider } from "@material-ui/core/styles";
+import theme from "./themeConfig";
+import styled from "styled-components";
+
+const Title = styled.h1`
+  text-align: center;
+`;
 
 const GifExpertApp = () => {
   const [categories, setCategories] = useState(["Naruto"]);
   return (
-    <div>
-      <h2>GifExpertApp</h2>
+    <ThemeProvider theme={theme}>
+      <Title>JdbGifApp</Title>
       <AddCategory setCategories={setCategories} />
       <hr />
       <ol>
@@ -14,7 +21,7 @@ const GifExpertApp = () => {
           <GifGrid key={category} category={category} />
         ))}
       </ol>
-    </div>
+    </ThemeProvider>
   );
 };
 
