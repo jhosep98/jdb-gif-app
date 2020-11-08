@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import GifGridItem from "./GifGridItem";
 import Paper from "@material-ui/core/Paper";
+import { getGifs } from "../helpers/getGifs";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 
 const ContainerCard = styled(Paper)`
   display: flex;
@@ -13,34 +15,22 @@ const ContainerCard = styled(Paper)`
 `;
 
 const GifGrid = ({ category }) => {
-  const [images, setImages] = useState([]);
+  // const [images, setImages] = useState([]);
 
-  useEffect(() => {
-    getGifs();
-  }, []);
+  // useEffect(() => {
+  //   getGifs(category).then(setImages);
+  // }, [category]);
 
-  const getGifs = async () => {
-    const url =
-      "https://api.giphy.com/v1/gifs/search?q=cry&limit=10&api_key=ylxzNrvpUUBzP2IXyvul9y2eo95tRjmI";
-    const response = await fetch(url);
-    const { data } = await response.json();
-
-    const gifs = data.map((img) => ({
-      id: img.id,
-      title: img.title,
-      url: img.images?.downsized_medium.url,
-    }));
-    setImages(gifs);
-  };
-
+  const { data, loading } = useFetchGifs();
   return (
     <>
       <h3>{category}</h3>
-      <ContainerCard elevation={1}>
+      {loading ? "cargando.....!" : "cargado."}
+      {/* <ContainerCard elevation={1}>
         {images.map((img) => (
           <GifGridItem key={img.id} {...img} />
         ))}
-      </ContainerCard>
+      </ContainerCard> */}
     </>
   );
 };
