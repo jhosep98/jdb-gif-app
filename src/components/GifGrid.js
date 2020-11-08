@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import GifGridItem from "./GifGridItem";
 import Paper from "@material-ui/core/Paper";
-import { getGifs } from "../helpers/getGifs";
 import { useFetchGifs } from "../hooks/useFetchGifs";
 
 const ContainerCard = styled(Paper)`
@@ -15,22 +14,16 @@ const ContainerCard = styled(Paper)`
 `;
 
 const GifGrid = ({ category }) => {
-  // const [images, setImages] = useState([]);
-
-  // useEffect(() => {
-  //   getGifs(category).then(setImages);
-  // }, [category]);
-
-  const { data, loading } = useFetchGifs();
+  const { data: images, loading } = useFetchGifs(category);
   return (
     <>
       <h3>{category}</h3>
-      {loading ? "cargando.....!" : "cargado."}
-      {/* <ContainerCard elevation={1}>
+      {loading && <p>cargando...</p>}
+      <ContainerCard elevation={1}>
         {images.map((img) => (
           <GifGridItem key={img.id} {...img} />
         ))}
-      </ContainerCard> */}
+      </ContainerCard>
     </>
   );
 };
