@@ -19,7 +19,7 @@ const AddCategory = ({ setCategories }) => {
     <form onSubmit={handleSubmit}>
       <TextField
         variant="filled"
-        label="Add-Category"
+        label="Search-Gifs"
         type="text"
         value={inputValue}
         onChange={handleInputChange}

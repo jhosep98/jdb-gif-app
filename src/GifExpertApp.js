@@ -7,15 +7,15 @@ import styled from "styled-components";
 
 const Title = styled.h1`
   text-align: center;
+  text-transform: uppercase;
 `;
 
 const GifExpertApp = () => {
-  const [categories, setCategories] = useState(["Naruto"]);
+  const [categories, setCategories] = useState([]);
   return (
     <ThemeProvider theme={theme}>
       <Title>JdbGifApp</Title>
       <AddCategory setCategories={setCategories} />
-      <hr />
       <ol>
         {categories.map((category) => (
           <GifGrid key={category} category={category} />

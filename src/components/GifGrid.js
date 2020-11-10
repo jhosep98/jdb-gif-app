@@ -9,7 +9,7 @@ const ContainerCard = styled(Paper)`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background: #fdfdfd;
+  background: transparent !important;
   padding: 1.2rem 0;
 `;
 
@@ -19,7 +19,7 @@ const GifGrid = ({ category }) => {
     <>
       <h3>{category}</h3>
       {loading && <p>cargando...</p>}
-      <ContainerCard elevation={1}>
+      <ContainerCard elevation={3}>
         {images.map((img) => (
           <GifGridItem key={img.id} {...img} />
         ))}
