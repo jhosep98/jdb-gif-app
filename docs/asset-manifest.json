@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/jdb-gif-app/static/css/main.013cada8.chunk.css",
+    "main.js": "/jdb-gif-app/static/js/main.a79386db.chunk.js",
+    "main.js.map": "/jdb-gif-app/static/js/main.a79386db.chunk.js.map",
+    "runtime-main.js": "/jdb-gif-app/static/js/runtime-main.bb2b4249.js",
+    "runtime-main.js.map": "/jdb-gif-app/static/js/runtime-main.bb2b4249.js.map",
+    "static/js/2.1f174a58.chunk.js": "/jdb-gif-app/static/js/2.1f174a58.chunk.js",
+    "static/js/2.1f174a58.chunk.js.map": "/jdb-gif-app/static/js/2.1f174a58.chunk.js.map",
+    "index.html": "/jdb-gif-app/index.html",
+    "static/css/main.013cada8.chunk.css.map": "/jdb-gif-app/static/css/main.013cada8.chunk.css.map",
+    "static/js/2.1f174a58.chunk.js.LICENSE.txt": "/jdb-gif-app/static/js/2.1f174a58.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bb2b4249.js",
+    "static/js/2.1f174a58.chunk.js",
+    "static/css/main.013cada8.chunk.css",
+    "static/js/main.a79386db.chunk.js"
+  ]
+}
