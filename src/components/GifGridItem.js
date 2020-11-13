@@ -14,9 +14,9 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 
 const useStyles = makeStyles({
   root: {
-    width: "25%",
+    width: "325px",
     margin: "1.2rem",
-    background: "#444",
+    background: "#508781",
     color: "#fff",
   },
   media: {
