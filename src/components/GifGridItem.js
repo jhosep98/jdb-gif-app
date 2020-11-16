@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import {
   Card,
   CardActionArea,
@@ -24,10 +25,17 @@ const useStyles = makeStyles({
   },
 });
 
+const CustomCard = styled(Card)`
+  @media (max-width: 600px) {
+    width: 220px !important;
+    margin: 0 0 30px 0 !important;
+  }
+`;
+
 const GifGridItem = ({ title, url }) => {
   const classes = useStyles();
   return (
-    <Card className={classes.root} elevation={8}>
+    <CustomCard className={classes.root} elevation={8}>
       <CardActionArea>
         <CardMedia className={classes.media} image={url} title={title} />
         <CardContent>
@@ -54,7 +62,7 @@ const GifGridItem = ({ title, url }) => {
           </Button>
         </CardActions>
       </CardActionArea>
-    </Card>
+    </CustomCard>
   );
 };
 

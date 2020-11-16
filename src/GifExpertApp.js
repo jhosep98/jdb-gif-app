@@ -9,18 +9,21 @@ const Title = styled.h1`
   text-align: center;
   text-transform: uppercase;
 `;
-
+const ListaContainer = styled.ol`
+  padding: 0;
+  width: 100%;
+`;
 const GifExpertApp = () => {
   const [categories, setCategories] = useState([]);
   return (
     <ThemeProvider theme={theme}>
       <Title>JdbGifApp</Title>
       <AddCategory setCategories={setCategories} />
-      <ol>
+      <ListaContainer>
         {categories.map((category) => (
           <GifGrid key={category} category={category} />
         ))}
-      </ol>
+      </ListaContainer>
     </ThemeProvider>
   );
 };

@@ -11,10 +11,11 @@ const ContainerCard = styled(Paper)`
   justify-content: space-evenly;
   background: transparent !important;
   padding: 1.2rem 0;
-  @media (max-width: 700px) {
+  @media (max-width: 600px) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
   }
 `;
 
